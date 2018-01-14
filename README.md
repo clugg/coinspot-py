@@ -19,6 +19,7 @@ A compatible version of `python-requests` can be installed via `$ pip install -r
 >>> cs.my_balances()
 {'status': 'ok', 'balance': {'aud': 0, 'btc': 0, 'ltc': 0, 'doge': 0, 'ppc': 0, 'wdc': 0, 'xpm': 0, 'max': 0, 'lot': 0, 'qrk': 0, 'moon': 0, 'ftc': 0, 'drk': 0}}
 >>> cs.my_coin_deposit('BTC')
-{'status': 'ok', 'address': '1JVyVgKg9yNiPatm7c1g3hD4yjZ72xjUpD'}```
+{'status': 'ok', 'address': '1JVyVgKg9yNiPatm7c1g3hD4yjZ72xjUpD'}
+```
 
 All available functionality is listed at [CoinSpot's API reference](https://www.coinspot.com.au/api). Any available URL listed is accessible through this SDK by replacing slashes with underscores. For example, the URL `/my/coin/deposit` is accessible via a CoinSpot instance's `my_coin_deposit` method.
