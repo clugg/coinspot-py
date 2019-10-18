@@ -2,14 +2,14 @@
 
 A Python 2 and 3 compatible SDK for the [CoinSpot](https://www.coinspot.com.au/) API.
 
-# Prerequisites
+## Prerequisites
 
 * Python 2.7+ or Python 3.0+
-* [python-requests](python-requests.org)
+* [python-requests](https://requests.kennethreitz.org/)
 
 A compatible version of `python-requests` can be installed via `$ pip install -r requirements.txt`.
 
-# Usage
+## Usage
 
 ```python
 >>> from coinspot import CoinSpot
