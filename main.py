@@ -80,6 +80,7 @@ print("7. Cancel Buy Order")
 print("8. Show latest prices")
 print("9. Display Buy quote")
 print("0. Display Sell quote")
+print("b. Display Balance")
 print("q. Quit")
 
 def CoinDepositAddress():
@@ -88,6 +89,9 @@ def CoinDepositAddress():
         pprint.pprint(coin.my_coin_deposit(address))
 def DepositCoin():
         print("deleted")
+def DisplayBalance():
+        print("My Balance")
+        pprint.pprint(coin.my_balances())
 def SendCrypto():
         print("Enter cyrpto address")
         address = input()
@@ -154,7 +158,7 @@ def SellQuote():
 def CleanupAndQuit():
         print("byez")
 
-menuchoices = {'1':CoinDepositAddress, '2':DepositCoin, '3':DisplayTransactions, '4':ShowOrders, '5':DisplayCoinTransactions, '6':CancelSellOrder, '7':CancelBuyOrder, '8':ShowLatest, '9':BuyQuote, '0':SellQuote, 'q':CleanupAndQuit}
+menuchoices = {'1':CoinDepositAddress, '2':DepositCoin, '3':DisplayTransactions, '4':ShowOrders, '5':DisplayCoinTransactions, '6':CancelSellOrder, '7':CancelBuyOrder, '8':ShowLatest, '9':BuyQuote, '0':SellQuote, 'b': DisplayBalance, 'q':CleanupAndQuit}
 ret = menuchoices[input()]()
 #if ret is None:
     #print("Please enter a valid menu choice!")
