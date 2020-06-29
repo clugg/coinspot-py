@@ -9,6 +9,11 @@ A Python 2 and 3 compatible SDK for the [CoinSpot](https://www.coinspot.com.au/)
 
 A compatible version of `python-requests` can be installed via `$ pip install -r requirements.txt`.
 
+
+
+REMEMBER to assign your API key and secret to the _api_key and _api_secret variables, as they are currently blank.
+
+
 ## Usage
 
 ```python
