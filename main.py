@@ -3,10 +3,10 @@
 from coinspot import CoinSpot
 import pprint
 
-#_api_key = ''
-#_api_secret = ''
+_api_key = ''
+_api_secret = ''
 
-#coin=CoinSpot(_api_key,_api_secret)
+coin=CoinSpot(_api_key,_api_secret)
 
 print('''
 
