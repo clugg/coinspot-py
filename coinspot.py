@@ -201,23 +201,6 @@ class CoinSpot(object):
             "cointype": cointype
         })
 
-    """Send Coins
-
-    Args:
-        cointype: the coin shortname, example value 'BTC', 'LTC', 'DOGE'
-        address: the address to send coins to
-        amount: the amount of coins to send
-
-    Returns:
-        status: ok, error
-    """
-    def my_coin_send(self, cointype, address, amount):
-        return self._request("my/coin/send", {
-            "cointype": cointype,
-            "address": address,
-            "amount": amount
-        })
-
     """Quick Buy Quote
 
     Args:
@@ -252,4 +235,42 @@ class CoinSpot(object):
         return self._request("quote/sell", {
             "cointype": cointype,
             "amount": amount
+        })
+
+
+    """Display Coin Transactions
+
+    Args:
+        cointype: the coin shortname, example value 'BTC', 'LTC', 'DOGE'
+        startdate - (optional) format 'YYYY-MM-DD'
+        enddate - (optional) format 'YYYY-MM-DD'
+    Returns:
+        status - ok, error
+        buyorders - array containing your coins buy order history
+        sellorders - array containing your coins sell order history
+    """
+
+    def coin_transactions(self, cointype, startdate, enddate):
+        return self._request("ro/my/transactions/:cointype", {
+            "cointype": cointype,
+            "startdate": startdate,
+            "enddate": enddate
+        })
+
+
+    """Display Transactions
+
+    Args:
+        startdate - (optional) format 'YYYY-MM-DD'
+        enddate - (optional) format 'YYYY-MM-DD'
+    Returns:
+        status - ok, error
+        buyorders - array containing your coins buy order history
+        sellorders - array containing your coins sell order history
+    """
+
+    def my_transactions(self, startdate, enddate):
+        return self._request("ro/my/transactions", {
+            "startdate": startdate,
+            "enddate": enddate
         })
