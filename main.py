@@ -27,7 +27,7 @@ print('''
 
 print("Select an option: \n")
 print("1. Search Coin Deposit Address")
-print("2. Deposit Coins")
+print("2. Display Open Orders")
 print("3. Display Transactions")
 print("4. Display Buy/Sell Orders")
 print("5. Display Coin Transactions")
@@ -36,6 +36,8 @@ print("7. Cancel Buy Order")
 print("8. Show latest prices")
 print("9. Display Buy quote")
 print("0. Display Sell quote")
+print("o. Display My Orders")
+print("h. Display Orders History")
 print("b. Display Balance")
 print("q. Quit")
 
@@ -44,8 +46,12 @@ def CoinDepositAddress():
         address = input()
         pprint.pprint(coin.my_coin_deposit(address))
 
-def DepositCoin():
-        print("deleted")
+def DisplayMyOrders():
+        pprint.pprint(coin.my_orders())
+
+def DisplayOrdersHistory():
+        cointype = input("Enter Coin: ")
+        pprint.pprint(coin.orders_history(cointype))
 
 def DisplayBalance():
         print("My Balance")
@@ -57,6 +63,10 @@ def SendCrypto():
         coin.my_coin_send("BTC",address,"1.03846462")
         print("Crypto sent!")
 
+def DisplayOpenOrders():
+        cointype = input("Enter Coin: ")
+        pprint.pprint(coin.orders(cointype))
+        
 def DisplayTransactions():
         print("Enter Start date (YYYY-MM-DD:)")
         start_date = input()
@@ -128,9 +138,9 @@ def SellQuote():
 def CleanupAndQuit():
         print("byez")
 
-menuchoices = {'1':CoinDepositAddress, '2':DepositCoin, '3':DisplayTransactions, '4':ShowOrders, '5':DisplayCoinTransactions, '6':CancelSellOrder, '7':CancelBuyOrder, '8':ShowLatest, '9':BuyQuote, '0':SellQuote, 'b': DisplayBalance, 'q':CleanupAndQuit}
+menuchoices = {'1':CoinDepositAddress, '2':DisplayOpenOrders, '3':DisplayTransactions, '4':ShowOrders, '5':DisplayCoinTransactions, '6':CancelSellOrder, '7':CancelBuyOrder, '8':ShowLatest, '9':BuyQuote, '0':SellQuote, 'h': DisplayOrdersHistory, 'o': DisplayMyOrders, 'b': DisplayBalance, 'q':CleanupAndQuit}
 
-ret = menuchoices[input()]()
+ret = menuchoices[input("Option: ")]()
 
 #if ret is None:
     #print("Please enter a valid menu choice!")
