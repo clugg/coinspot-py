@@ -58,9 +58,9 @@ def SendCrypto():
         print("Crypto sent!")
 
 def DisplayTransactions():
-        print("Enter Start date (YYYY-MM-DD:")
+        print("Enter Start date (YYYY-MM-DD:)")
         start_date = input()
-        print("Enter End date (YYYY-MM-DD:")
+        print("Enter End date (YYYY-MM-DD:)")
         end_date = input()
         pprint.pprint(coin.my_transactions(start_date,end_date))
 
@@ -99,9 +99,9 @@ def ShowOrders():
 def DisplayCoinTransactions():
         print("Enter Coin:")
         cointype=input()
-        print("Enter Start date (YYYY-MM-DD:"))
+        print("Enter Start date (YYYY-MM-DD:)")
         start_date = input()
-        print("Enter End date (YYYY-MM-DD:"))
+        print("Enter End date (YYYY-MM-DD:)")
         end_date = input()
         pprint.pprint(coin.coin_transactions(cointype,start_date,end_date))
 
