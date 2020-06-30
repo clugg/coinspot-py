@@ -1,4 +1,5 @@
-# coinspot-py
+#AUTHOR Derek Chan
+#GitHub https://github.com/NET-OF-BEING
 
 A Python 2 and 3 compatible SDK for the [CoinSpot](https://www.coinspot.com.au/) API.
 
@@ -12,7 +13,7 @@ A compatible version of `python-requests` can be installed via `$ pip install -r
 
 
 REMEMBER to assign your API key and secret to the _api_key and _api_secret variables, as they are currently blank.
-
+paste your API key and secret in config.py!
 
 ## Usage
 
@@ -27,4 +28,16 @@ REMEMBER to assign your API key and secret to the _api_key and _api_secret varia
 {'status': 'ok', 'address': '1JVyVgKg9yNiPatm7c1g3hD4yjZ72xjUpD'}
 ```
 
-All available functionality is listed at [CoinSpot's API reference](https://www.coinspot.com.au/api). Any available URL listed is accessible through this SDK by replacing slashes with underscores. For example, the URL `/my/coin/deposit` is accessible via a CoinSpot instance's `my_coin_deposit` method.
+All available functionality is listed at [CoinSpot's API reference](https://www.coinspot.com.au/api). Any available URL listed is accessible through this SDK by replacing slashes with underscores. For example, the URL '/my/coin/deposit' is accessible via a CoinSpot instance's `my_coin_deposit` method.
+
+
+Please feel free to DONATE!  
+------------------------------------------------------ 
+Bitcoin : 16K2LKdXXt4GXKyZYvu8Q9qrWYQGaEtyNa
+LiteCoin : ML8HdH13wEwRcBMh7VHgLb8LNMYBsBdn8T
+DRGN : 0x7b4be22a721763fc6d64ccb431aa588195162544
+XRP : 632217416
+ETH : 0x7b4be22a721763fc6d64ccb431aa588195162544
+LINK : 0x7b4be22a721763fc6d64ccb431aa588195162544
+-----------------------------------------------------
+

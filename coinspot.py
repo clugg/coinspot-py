@@ -9,8 +9,8 @@ import requests
 
 class CoinSpot(object):
     # The endpoint for the API
-    API_ENDPOINT = "https://www.coinspot.com.au:443/api/"
-
+    API_ENDPOINT = "https://www.coinspot.com.au/api/"
+    #API_ENDPOINT = "https://www.coinspot.com.au/api/ro"
     """Sets up the user's API key and secret.
 
     Args:
@@ -109,9 +109,10 @@ class CoinSpot(object):
                   with your balance for that coin.
     """
     def my_balances(self):
-        return self._request("my/balances")
+        return self._request("ro/my/balances")
 
     """List My Orders
+    
     A list of your open orders by coin type, it will
     return a maximum of 100 results
 
@@ -172,6 +173,20 @@ class CoinSpot(object):
             "cointype": cointype,
             "amount": amount,
             "rate": rate
+        })
+
+    """Display Coin Balance
+    
+    Args:
+        cointype: the coin shortname, example value 'BTC', 'LTC', 'DOGE'
+    Returns:
+        status: ok, error
+        balance - object containing one property with your balance, AUD value and rate for that coin
+    """
+    
+    def my_coin_balance(self, cointype):
+        return self._request("api/ro/my/balances/:cointype", {
+            "cointype": cointype
         })
 
     """Cancel Sell Order
@@ -274,3 +289,30 @@ class CoinSpot(object):
             "startdate": startdate,
             "enddate": enddate
         })
+
+    
+    """Display Coin Balance
+
+    Args:
+        cointype: the coin shortname, example value 'BTC', 'LTC', 'DOGE'
+    Response
+        status - ok, error
+        balance - object containing one property with your balance, AUD value and rate for that coin
+    """
+
+    def my_coin_balance(self,cointype):
+        return self._request("api/ro/my/balances/:cointype", {
+            "cointype": cointype
+        })
+
+    """ Display Affiliate Payments
+
+    Response:
+         an object containing a list of all your affiliate payments
+    """
+
+    def affiliate_payments(self):
+        return self._request("ro/my/affiliatepayments", {
+            
+        })
+
